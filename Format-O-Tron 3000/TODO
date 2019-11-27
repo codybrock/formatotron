@@ -1,0 +1,31 @@
+TODO:
+
+- GUI
+	Hopefully the program will be pretty easy to interface with the GUI.
+	I honestly just don't know yet. We'll have to see how the tools work first.
+	(CB)
+	
+- open()
+	This method should be a piece of cake:
+	Validate the filename
+	Read the file, and append each line as a String to inLines
+	if anything goes wrong, return an appropriate error message.
+	otherwise, return a success message.
+	(CB)
+	
+- save()
+	This one will be a little trickier. It will definitely benefit from some helper functions.
+	I think the strategy will be to have a variable for each formatting parameter like:
+		int length =  80;
+		String align = 'l';
+		boolean wrap = false;
+		boolean singleSpace = true	// true means single spaced, false means double spaced
+		boolean oneCol = true	// true means one column, flase means two columns
+	You set the defaults at the beginning of the save() method and then index through the list
+	and every time you hit a tag you change the variable and format everything after it.
+	For -t, -p# and -b# you just apply it to the next line.
+	Have an isTag() method so you can avoid applying formatting to tags. Better yet, a whatTag()
+	that returns the name of the tag so you can use it in a switch statement and returns 0
+	if it isn't a tag so you know it's content
+	The trickiest one is the columns one. I'm not sure this approach would work for that.
+	(CB)
