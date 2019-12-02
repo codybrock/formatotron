@@ -105,7 +105,8 @@ public class Format_O_Tron {
 		"Type a command and press 'ENTER' :  ");
 		
 		// Skipping input validation because this will be replaced with a gui
-		return ui.next().toLowerCase().strip(); // just a little format help tho
+		//return ui.next().toLowerCase().strip(); // just a little format help tho
+		return "";
 	}
 	
 	/**************************************************************************

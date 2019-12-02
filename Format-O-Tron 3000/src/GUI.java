@@ -1,4 +1,3 @@
-import org.eclipse.swt.*;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.layout.GridLayout;
@@ -13,7 +12,6 @@ public class GUI extends Composite {
 
 	
 	public static void main(String[] args) {
-		
 		Display display = new Display();
 		Shell shell = new Shell(display);
 		shell.setLayout(new GridLayout(1, false));
@@ -25,10 +23,9 @@ public class GUI extends Composite {
 				display.sleep();
 		}
 		display.dispose();
+		
 	}
-	
-	
-	
+		
 	
 	/**
 	 * Create the composite.
@@ -52,13 +49,25 @@ public class GUI extends Composite {
 		scrolledComposite.setLayoutData(gd_scrolledComposite);
 		scrolledComposite.setExpandHorizontal(true);
 		scrolledComposite.setExpandVertical(true);
+		
+		Label lblOutputHere = new Label(scrolledComposite, SWT.NONE);
+		lblOutputHere.setText("Output here");
+		scrolledComposite.setContent(lblOutputHere);
+		scrolledComposite.setMinSize(lblOutputHere.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		new Label(this, SWT.NONE);
 		
-		Composite composite = new Composite(this, SWT.NONE);
-		GridData gd_composite = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
-		gd_composite.widthHint = 335;
-		gd_composite.heightHint = 24;
-		composite.setLayoutData(gd_composite);
+		ScrolledComposite scrolledComposite_2 = new ScrolledComposite(this, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		GridData gd_scrolledComposite_2 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
+		gd_scrolledComposite_2.heightHint = 3;
+		gd_scrolledComposite_2.widthHint = 315;
+		scrolledComposite_2.setLayoutData(gd_scrolledComposite_2);
+		scrolledComposite_2.setExpandHorizontal(true);
+		scrolledComposite_2.setExpandVertical(true);
+		
+		Label lblOpenFilename = new Label(scrolledComposite_2, SWT.NONE);
+		lblOpenFilename.setText("Open filename");
+		scrolledComposite_2.setContent(lblOpenFilename);
+		scrolledComposite_2.setMinSize(lblOpenFilename.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		
 		Button btnOpen = new Button(this, SWT.NONE);
 		GridData gd_btnOpen = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
@@ -67,11 +76,18 @@ public class GUI extends Composite {
 		btnOpen.setText("Open");
 		new Label(this, SWT.NONE);
 		
-		Composite composite_1 = new Composite(this, SWT.NONE);
-		GridData gd_composite_1 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
-		gd_composite_1.widthHint = 335;
-		gd_composite_1.heightHint = 25;
-		composite_1.setLayoutData(gd_composite_1);
+		ScrolledComposite scrolledComposite_3 = new ScrolledComposite(this, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		GridData gd_scrolledComposite_3 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
+		gd_scrolledComposite_3.heightHint = 3;
+		gd_scrolledComposite_3.widthHint = 315;
+		scrolledComposite_3.setLayoutData(gd_scrolledComposite_3);
+		scrolledComposite_3.setExpandHorizontal(true);
+		scrolledComposite_3.setExpandVertical(true);
+		
+		Label lblSaveFilename = new Label(scrolledComposite_3, SWT.NONE);
+		lblSaveFilename.setText("Save filename");
+		scrolledComposite_3.setContent(lblSaveFilename);
+		scrolledComposite_3.setMinSize(lblSaveFilename.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		
 		Button btnSave = new Button(this, SWT.NONE);
 		GridData gd_btnSave = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
@@ -88,10 +104,15 @@ public class GUI extends Composite {
 		ScrolledComposite scrolledComposite_1 = new ScrolledComposite(this, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
 		GridData gd_scrolledComposite_1 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 2, 1);
 		gd_scrolledComposite_1.heightHint = 50;
-		gd_scrolledComposite_1.widthHint = 415;
+		gd_scrolledComposite_1.widthHint = 420;
 		scrolledComposite_1.setLayoutData(gd_scrolledComposite_1);
 		scrolledComposite_1.setExpandHorizontal(true);
 		scrolledComposite_1.setExpandVertical(true);
+		
+		Label lblErrorLogHere = new Label(scrolledComposite_1, SWT.NONE);
+		lblErrorLogHere.setText("Error log here");
+		scrolledComposite_1.setContent(lblErrorLogHere);
+		scrolledComposite_1.setMinSize(lblErrorLogHere.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		new Label(this, SWT.NONE);
 		new Label(this, SWT.NONE);
 		
