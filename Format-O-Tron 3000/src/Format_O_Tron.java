@@ -50,6 +50,7 @@ public class Format_O_Tron {
 	 *************************************************************************/
 	public void mainLoop() {
 		
+		
 		Scanner ui = new Scanner(System.in); // only needed for text version
 		
 		boolean quit = false;
