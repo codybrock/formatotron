@@ -1,24 +1,40 @@
+import java.io.*;
+import java.util.Scanner;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
+import java.io.File;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Text;
 
-public class GUI extends Composite {
-	private Text text;
-	private Text text_1;
 
+public class GUI extends Composite {
+	
+	//// Global Variables ///////////////////////////////////////////////////////
+	private Text text;		// Text box for open 
+	private Text text_1;	// Text box for save
+	
+	// Open and save files
+	File openFile = new File("");
+	File saveFile = new File("");
+
+	
+	//Scanner sc = new Scanner(openFile);
+	
 	/**
 	 * Main method used for creating and printing a GUI. 
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		
+		
 		Display display = new Display();
 		Shell shell = new Shell(display);
 		shell.setLayout(new GridLayout(1, false));
@@ -30,7 +46,6 @@ public class GUI extends Composite {
 				display.sleep();
 		}
 		display.dispose();
-		
 	}
 			
 	/**
@@ -136,22 +151,22 @@ public class GUI extends Composite {
 			@Override
 			public void handleEvent(org.eclipse.swt.widgets.Event arg0) {
 				// Actions performed once the open button is clicked
-				System.out.println("Testing open button");
+				openFile = new File(text.getText());
+				System.out.println(openFile);
 			}	
 		});
-			
-			
+						
 		//// Save button Listener ////
 			
 		btnSave.addListener(SWT.Selection, new Listener() {
 			@Override
 			public void handleEvent(org.eclipse.swt.widgets.Event arg0) {
 				// Actions performed once the save button is clicked
-				System.out.println("Testing save button");
+				saveFile = new File(text_1.getText());
+				System.out.println(saveFile);
 			}	
 		});
-			
-			
+						
 		//// Exit button listener ////
 			
 		btnExit.addListener(SWT.Selection, new Listener() {

@@ -49,8 +49,7 @@ public class Format_O_Tron {
 	 * functionality, such as file read/write, tag interpretation, etc.
 	 *************************************************************************/
 	public void mainLoop() {
-		
-		
+				
 		Scanner ui = new Scanner(System.in); // only needed for text version
 		
 		boolean quit = false;
@@ -75,8 +74,7 @@ public class Format_O_Tron {
 		//potentially GUI end stuff?
 		System.out.println("EXIT");		
 	}
-	
-	
+		
 	/**************************************************************************
 	 * Gets user input from clicks in the GUI.
 	 * 
